@@ -1,10 +1,11 @@
-import { myTheme } from './styles/theme';
-import styled, { ThemeProvider } from 'styled-components';
-import { Container } from './Container';
+import { myTheme } from "./styles/theme";
+import styled, { ThemeProvider } from "styled-components";
+import { Container } from "./components/Container";
+import Header from "./components/Header/Header";
 
 const TestType = {
-  Error: 'error3',
-  Button: 'Button'
+  Error: "error3",
+  Button: "Button"
 } as const;
 
 type TestTypeDeclare = typeof TestType[keyof typeof TestType];
@@ -18,16 +19,14 @@ const Test = styled.div`
   height: 100px;
   ${({ type }: TestInterface) => (type === TestType.Button ? `border: 1px solid red` : ``)};
 
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: ${(props) => props.theme.colors.primary};
 `;
 
 function App() {
   return (
     <ThemeProvider theme={myTheme}>
       <div className="App">
-        <header className="App-header">
-          <p>dfwfwef</p>
-        </header>
+        <Header />
         <Container />
         <Test type={TestType.Button}>hi</Test>
       </div>
