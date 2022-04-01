@@ -1,9 +1,8 @@
 {
-  "doubleQuote": true,
-  "parser": "typescript",
-  "semi": true,
-  "useTabs": false,
+  "printWidth": 110,
   "tabWidth": 2,
-  "printWidth": 120,
-  "arrowParens": "always"
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "jsxBracketSameLine": false
 }
