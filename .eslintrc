@@ -88,7 +88,9 @@
     "yield-star-spacing": ["error", "after"],
     // 보안 이슈로 새 창 열기 시 rel='norefferrer'를 선언하도록 되어있지만
     // 사용자 추적을 원활하게 하기 위해 noopnner를 선언함, 허용 옵션 { allowReferrer: true }
-    "react/jsx-no-target-blank": ["error", { "allowReferrer": true }]
+    "react/jsx-no-target-blank": ["error", { "allowReferrer": true }],
+    //using the new JSX transform from React 17
+    "react/react-in-jsx-scope": 0
   },
   "ignorePatterns": ["node_modules"]
 }
