@@ -1,7 +1,9 @@
 import { myTheme } from "./styles/theme";
 import styled, { ThemeProvider } from "styled-components";
-import { Container } from "./components/Container";
+import { Container } from "./components/Container/style";
 import Header from "./components/Header/Header";
+import Title from "./components/Title/Title";
+import Filtering from "./components/Filtering/Filtering";
 
 const TestType = {
   Error: "error3",
@@ -25,11 +27,12 @@ const Test = styled.div`
 function App() {
   return (
     <ThemeProvider theme={myTheme}>
-      <div className="App">
-        <Header />
-        <Container />
+      <Header />
+      <Container>
+        <Title />
+        <Filtering />
         <Test type={TestType.Button}>hi</Test>
-      </div>
+      </Container>
     </ThemeProvider>
   );
 }
