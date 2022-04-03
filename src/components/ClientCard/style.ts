@@ -82,6 +82,10 @@ export const Divider = styled.div`
   width: 334px;
   height: 0px;
   border: 1px solid ${(props) => props.theme.colors.base};
+
+  @media only screen and (max-width: 360px) {
+    width: 288px;
+  }
 `;
 
 export const ListWrapper = styled.div`

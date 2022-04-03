@@ -5,6 +5,11 @@ export const FilterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const Selection = styled.div`
@@ -14,6 +19,10 @@ export const Selection = styled.div`
 export const ToggleWrapper = styled.div`
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 export const ToggleText = styled.div`

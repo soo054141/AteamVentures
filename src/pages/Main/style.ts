@@ -9,6 +9,10 @@ export const MainWrapper = styled.div`
   @media only screen and (max-width: 1440px) {
     padding: 40px 20px 60px;
   }
+
+  @media only screen and (max-width: 360px) {
+    padding: 24px 20px;
+  }
 `;
 
 export const ClientCardsWrapper = styled.div`

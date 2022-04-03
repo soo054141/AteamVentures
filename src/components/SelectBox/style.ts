@@ -7,6 +7,7 @@ interface SelectBoxInterface {
 }
 
 export const StyledSelectBox = styled.div`
+  z-index: 999;
   position: relative;
   border: 1px solid ${(props) => props.theme.colors.gray};
   border-radius: 4px;

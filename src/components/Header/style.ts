@@ -11,10 +11,28 @@ export const HeaderWrapper = styled.div`
 
 export const LogoWrap = styled.div`
   margin-left: 40px;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    margin-left: 23px;
+  }
+`;
+
+export const MenuIcon = styled.img`
+  display: none;
+  margin-right: 19px;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 export const Logo = styled.img`
   width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    width: 91.8px;
+  }
 `;
 
 export const ClientWrap = styled.div`
@@ -24,6 +42,10 @@ export const ClientWrap = styled.div`
   font-weight: 500;
   color: white;
   margin-right: 40px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ClientIcon = styled.img``;
