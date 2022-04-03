@@ -1,7 +1,10 @@
+import { ClientInterface } from "src/pages/Main/index";
+import { useMemo } from "react";
 import {
   Card,
   ClientName,
   ProjectName,
+  InConsultationBadge,
   DeadLine,
   Divider,
   ListWrapper,
@@ -13,31 +16,44 @@ import {
   ChatBtn
 } from "./style";
 
-export default function ClientCard() {
+interface ClientCardInterface {
+  data: ClientInterface;
+}
+
+const listKey: Array<keyof Pick<ClientInterface, "count" | "amount" | "method" | "material">> = [
+  "count",
+  "amount",
+  "method",
+  "material"
+];
+
+const listTitleMap = {
+  count: "도면개수",
+  amount: "총 수량",
+  method: "가공방식",
+  material: "재료"
+};
+
+export default function ClientCard({ data }: ClientCardInterface) {
+  const MemoizeList = useMemo(() => {
+    return listKey.map((el) => (
+      <ListRow key={el}>
+        <ListTitle>{listTitleMap[el]}</ListTitle>
+        <ListValue>{`${data[el]}${typeof data[el] === "number" ? "개" : ""}`}</ListValue>
+      </ListRow>
+    ));
+  }, [data]);
+
   return (
     <Card>
-      <ProjectName>비행기 시제품 제작</ProjectName>
-      <ClientName>B 고객사</ClientName>
-      <DeadLine>2020.12.13까지 납기</DeadLine>
+      <ProjectName>
+        {data.title}
+        {data.status === "상담중" && <InConsultationBadge>상담중</InConsultationBadge>}
+      </ProjectName>
+      <ClientName>{data.client}</ClientName>
+      <DeadLine>{data.due}까지 납기</DeadLine>
       <Divider />
-      <ListWrapper>
-        <ListRow>
-          <ListTitle>도면개수</ListTitle>
-          <ListValue>2개</ListValue>
-        </ListRow>
-        <ListRow>
-          <ListTitle>도면개수</ListTitle>
-          <ListValue>2개</ListValue>
-        </ListRow>
-        <ListRow>
-          <ListTitle>도면개수</ListTitle>
-          <ListValue>2개</ListValue>
-        </ListRow>
-        <ListRow>
-          <ListTitle>도면개수</ListTitle>
-          <ListValue>2개</ListValue>
-        </ListRow>
-      </ListWrapper>
+      <ListWrapper>{MemoizeList}</ListWrapper>
       <ButtonWrapper>
         <ShowDetailBtn>요청 내역 보기</ShowDetailBtn>
         <ChatBtn>채팅하기</ChatBtn>
