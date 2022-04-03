@@ -1,30 +1,22 @@
-import React from "react";
-import { FilterWrapper, Selection } from "./style";
-import SelectBtn from "../SelectBtn/SelectBtn";
-// import { FilterNameType } from "../SelectBtn/SelectBtn";
-import { useState } from "react";
+import { FilterWrapper, Selection, ToggleWrapper, ToggleText } from "./style";
+import Toggle from "../Toggle/Toggle";
+import SelectBox from "../SelectBox/SelectBox";
 
-export enum FilterNameType {
-  Method = "가공방식",
-  Material = "재료"
+export interface FilteringInterface {
+  toggleChange: (toggleState: boolean) => void;
+  selectBoxChange: (filterArray: string[]) => void;
 }
 
-export interface SelectItemInterface {
-  filterName: FilterNameType;
-  selectCallback?: () => void;
-  isReset?: any;
-}
-
-export default function Filtering() {
-  const [isReset, setReset] = useState(true);
-
+export default function Filtering({ toggleChange, selectBoxChange }: FilteringInterface) {
   return (
     <FilterWrapper>
       <Selection>
-        <SelectBtn filterName={FilterNameType.Method} isReset={isReset} />
-        <SelectBtn filterName={FilterNameType.Material} />
+        <SelectBox selectBoxChange={selectBoxChange} />
       </Selection>
-      <div>토글영역</div>
+      <ToggleWrapper>
+        <Toggle toggleChange={toggleChange} />
+        <ToggleText>상담 중인 요청만 보기</ToggleText>
+      </ToggleWrapper>
     </FilterWrapper>
   );
 }
