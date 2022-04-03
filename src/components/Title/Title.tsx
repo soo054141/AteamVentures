@@ -1,10 +1,15 @@
 import { TitleWrapper, Heading, Description } from "./style";
 
-export default function Title() {
+interface TitleInterface {
+  pageTitle: string;
+  subTitle: string;
+}
+
+export default function Title({ pageTitle, subTitle }: TitleInterface) {
   return (
     <TitleWrapper>
-      <Heading>들어온 요청</Heading>
-      <Description>파트너님에게 딱 맞는 요청서를 찾아보세요.</Description>
+      <Heading>{pageTitle}</Heading>
+      <Description>{subTitle}</Description>
     </TitleWrapper>
   );
 }
