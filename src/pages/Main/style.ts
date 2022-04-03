@@ -1,22 +1,32 @@
 import styled from "styled-components";
 
 export const MainWrapper = styled.div`
-  width: 1130px;
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-top: 40px;
-  border: 1px solid gold;
+  flex-flow: column;
+  gap: 32px;
+  padding: 40px 155px 60px;
 
-  & > :not(:first-child) {
-    margin-top: 32px;
+  @media only screen and (max-width: 1440px) {
+    padding: 40px 20px 60px;
   }
 `;
 
 export const ClientCardsWrapper = styled.div`
-  width: 100%;
   display: flex;
+  gap: 16px;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding-top: 100px;
+`;
+
+export const EmptyClientSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #939fa5;
+  border: 1px solid #c2c2c2;
+  box-sizing: border-box;
+  border-radius: 4px;
 `;

@@ -37,7 +37,7 @@ export const Card = styled.div`
   flex-flow: column;
   padding: 24px 16px;
   flex-direction: column;
-  border: 1px solid ${(props) => props.theme.colors.base};
+  border: 2px solid ${(props) => props.theme.colors.base};
   border-radius: 4px;
   margin-bottom: 16px;
 

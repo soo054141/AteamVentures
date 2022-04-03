@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const FilterWrapper = styled.div`
   width: 100%;
-  background-color: green;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,5 +9,15 @@ export const FilterWrapper = styled.div`
 
 export const Selection = styled.div`
   display: flex;
-  background-color: gold;
+`;
+
+export const ToggleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const ToggleText = styled.div`
+  display: flex;
+  margin-left: 16px;
+  font-size: 14px;
 `;
